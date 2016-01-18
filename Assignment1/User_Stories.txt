@@ -1,3 +1,4 @@
 Story 1:
 Card: As a player, I want all of the cards to be printed to the screen so I can decide what to do.
-Conversation:
+Conversation: The computer should randomly select 4 values, and print them side by side to the screen.
+Confirmation: There will be a test to see that there are 4 values on the screen.
