@@ -2,3 +2,9 @@ Story 1:
 Card: As a player, I want all of the cards to be printed to the screen so I can decide what to do.
 Conversation: The computer should randomly select 4 values, and print them side by side to the screen.
 Confirmation: There will be a test to see that there are 4 values on the screen.
+
+
+Story 2:
+Card: As a player, I need to choose a card at the top on another pile when there is a empty space.
+Conversation: The computer should ask which card you'd like to choose and where you'd like to put it.
+Confirmation: The card I choose must be at the top of another pile and must be put in a empty space
