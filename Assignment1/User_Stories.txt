@@ -16,4 +16,4 @@ Confirmation:
 Story 4:
 Card: As a player, I want my score to be incremented every time a card is removed.
 Conversation:
-Confirmation: 
+Confirmation:
