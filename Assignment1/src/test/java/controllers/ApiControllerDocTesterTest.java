@@ -51,5 +51,9 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         assertThat(response.payload, containsString("Aces Up"));
         assertThat(response.payload, containsString("columnOfCards"));
     }
-
+    @Test
+    public void testCard(){
+        card myCard= new card();
+        assertThat(myCard.printSuit(), containsString("Spades"));
+    }
 }
