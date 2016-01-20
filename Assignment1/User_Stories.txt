@@ -1,3 +1,19 @@
-Story 1:
-Card: As a player, I want all of the cards to be printed to the screen so I can decide what to do.
+Story 1 - Nathan
+Card: As a player, I want a full regulation deck of cards so the game is fair
 Conversation:
+Confirmation:
+
+Story 2:
+Card: As a player, I want the four cards to be printed to the screen so I can see them.
+Conversation:
+Confirmation:
+
+Story 3:
+Card: As a player, I want any lower card with the same suit as another card to be removed, so the game can be played.
+Conversation:
+Confirmation:
+
+Story 4:
+Card: As a player, I want my score to be incremented every time a card is removed.
+Conversation:
+Confirmation: 
