@@ -23,6 +23,8 @@ import com.google.inject.Singleton;
 
 
 @Singleton
+
+
 public class ApplicationController {
 
     public Result index() {
@@ -32,5 +34,8 @@ public class ApplicationController {
     public Result acesUp() {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
+    //public Result card() {
+    //    return Results.html();
+    //}
 
 }
