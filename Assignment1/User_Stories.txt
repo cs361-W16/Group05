@@ -1,9 +1,19 @@
-Story 1:
-Card: As a player, I want all of the cards to be printed to the screen so I can decide what to do.
-Conversation: The computer should randomly select 4 values, and print them side by side to the screen.
-Confirmation: There will be a test to see that there are 4 values on the screen.
+Story 1 - Nathan
+Card: As a player, I want a full regulation deck of cards so the game is fair
+Conversation:
+Confirmation:
 
 Story 2:
-Card: As a player, I want the lowest number of the heart suit to be taken off of the screen.
-Conversation: The computer will find all of the hearts, and if there is more than one take the lowest value off of the screen.
-Confirmation: There will be a test to see if there is only one card that's suit is heart on the screen.
+Card: As a player, I want the four cards to be printed to the screen so I can see them.
+Conversation:
+Confirmation:
+
+Story 3:
+Card: As a player, I want any lower card with the same suit as another card to be removed, so the game can be played.
+Conversation:
+Confirmation:
+
+Story 4:
+Card: As a player, I want my score to be incremented every time a card is removed.
+Conversation:
+Confirmation: 
