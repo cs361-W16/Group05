@@ -55,14 +55,19 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
     @Test
     public void testCard(){
         card myCard = new card(1, "Diamond");
-        assertThat(myCard.printSuit(), containsString("Diamond"));
+        assertThat(myCard.getSuit(), containsString("Diamond"));
+        assertSame(myCard.getNumber(), 1);
     }
     @Test
     public void testDeck(){
         deck myDeck = new deck();
-        //assertThat(myDeck.numCards(),)
         assertSame(myDeck.numCards(), 52);
+        assertSame(myDeck.getCard(1).getNumber(), 2);
+        assertThat(myDeck.getCard(29).getSuit(), containsString("Diamonds"));
+        myDeck.dealRandom();
+        assertSame(myDeck.numCards(), 51);
     }
+
 
 
 }

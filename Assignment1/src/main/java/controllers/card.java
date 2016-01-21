@@ -9,8 +9,10 @@ public class card {
             number = num;
             suit = sui;
         }
-
-        public String printSuit(){
+        public String getSuit(){
             return suit;
+        }
+        public int getNumber(){
+            return number;
         }
 }
