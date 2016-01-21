@@ -24,6 +24,7 @@ import org.doctester.testbrowser.Request;
 import org.doctester.testbrowser.Response;
 import org.hamcrest.CoreMatchers;
 import static org.hamcrest.CoreMatchers.containsString;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 
 public class ApiControllerDocTesterTest extends NinjaDocTester {
@@ -53,14 +54,15 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
     }
     @Test
     public void testCard(){
-<<<<<<< HEAD
-        card myCard = new card();
-        assertThat(myCard.printSuit(), containsString("Spades"));
+        card myCard = new card(1, "Diamond");
+        assertThat(myCard.printSuit(), containsString("Diamond"));
+    }
+    @Test
+    public void testDeck(){
+        deck myDeck = new deck();
+        //assertThat(myDeck.numCards(),)
+        assertSame(myDeck.numCards(), 52);
     }
 
-=======
-        card myCard= new card();
-        assertThat(myCard.printSuit(), containsString("Spades"));
-    }
->>>>>>> ae32c5d52124b49e955fdd471e2e52c3cc7e4adb
+
 }
