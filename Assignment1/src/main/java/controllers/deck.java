@@ -1,4 +1,5 @@
 package controllers;
+import java.util.Random;
 
 /**
  * Created by Natha_000 on 1/21/2016.
@@ -7,6 +8,7 @@ public class deck {
     private int numCards;
     private card cardArray[];
 
+                                //This constructor creates a deck of cards in order
     deck(){
         numCards = 52;
         cardArray = new card[52];
@@ -32,10 +34,17 @@ public class deck {
             cardArray[i-1] = new card(number,suit);
         }
     }
+                    //This function deals a random card and removes it from the deck
     public card dealRandom(){
+        Random rand = new Random();
+        int myNum = rand.nextInt(numCards); //Returns value between 0 and numCards -1
+        card myCard = getCard(myNum);
+        for(int i = myNum; i < numCards - 1; i++)
+            cardArray[myNum] = cardArray[myNum + 1];
         numCards--;
-        return null;
+        return myCard;
     }
+
     public card getCard(int num){
         return cardArray[num];
     }

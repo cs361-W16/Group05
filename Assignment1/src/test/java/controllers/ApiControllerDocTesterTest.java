@@ -24,8 +24,8 @@ import org.doctester.testbrowser.Request;
 import org.doctester.testbrowser.Response;
 import org.hamcrest.CoreMatchers;
 import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
 
 public class ApiControllerDocTesterTest extends NinjaDocTester {
     
@@ -52,20 +52,34 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         assertThat(response.payload, containsString("Aces Up"));
         assertThat(response.payload, containsString("columnOfCards"));
     }
+    //This tests the constructor of the card class, to make sure cards are successfully created
     @Test
     public void testCard(){
         card myCard = new card(1, "Diamond");
         assertThat(myCard.getSuit(), containsString("Diamond"));
         assertSame(myCard.getNumber(), 1);
     }
+    //This tests the constructor of the deck class, to make sure the deck successfully creates cards
     @Test
     public void testDeck(){
         deck myDeck = new deck();
         assertSame(myDeck.numCards(), 52);
         assertSame(myDeck.getCard(1).getNumber(), 2);
         assertThat(myDeck.getCard(29).getSuit(), containsString("Diamonds"));
-        myDeck.dealRandom();
-        assertSame(myDeck.numCards(), 51);
+
+    }
+    //This tests the dealing functionality of the deck class, as cards should never be dealt twice.
+    @Test
+    public void testDeal(){
+        deck myDeck = new deck();
+        card myCard = myDeck.dealRandom();
+        card otherCard = null;
+        for(int i = 0; i < 51; i++) {
+            otherCard = myDeck.dealRandom();
+            assertNotNull(otherCard);
+            assertNotEquals(myCard, otherCard);
+        }
+        assertSame(myDeck.numCards(), 0);
     }
 
 
