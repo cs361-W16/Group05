@@ -53,8 +53,14 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
     }
     @Test
     public void testCard(){
+<<<<<<< HEAD
         card myCard = new card();
         assertThat(myCard.printSuit(), containsString("Spades"));
     }
 
+=======
+        card myCard= new card();
+        assertThat(myCard.printSuit(), containsString("Spades"));
+    }
+>>>>>>> ae32c5d52124b49e955fdd471e2e52c3cc7e4adb
 }
