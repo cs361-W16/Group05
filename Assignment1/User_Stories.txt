@@ -1,7 +1,7 @@
 Story 1 - Nathan
-Card: As a player, I want a full regulation deck of cards so the game is fair
-Conversation:
-Confirmation:
+Card: As a player, I want a full regulation deck that will deal cards randomly so the game is fair
+Conversation: To do this I have made 4 classes: card, deck, pile, game
+Confirmation: We will test to see that all 52 cards can be dealt, and that the same card is not repeated
 
 Story 2:
 Card: As a player, I want the four cards to be printed to the screen so I can see them.
@@ -9,7 +9,7 @@ Conversation:
 Confirmation:
 
 Story 3:
-Card: As a player, I want any lower card with the same suit as another card to be removed, so the game can be played.
+Card: As a player, I want to be able to remove a lower card with the same suit as another card, so the game can be played.
 Conversation:
 Confirmation:
 
