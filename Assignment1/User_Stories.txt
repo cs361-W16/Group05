@@ -13,7 +13,7 @@ Card: As a player, I want to be able to remove a lower card with the same suit a
 Conversation:
 Confirmation:
 
-Story 4:
+Story 4: - Yuan Yuan
 Card: As a player, I want my score to be incremented every time a card is removed.
-Conversation:
-Confirmation: 
+Conversation: We shall create a variable and change the number of it every deal and show that into the screen.
+Confirmation: Once the card has been removed, the score should be changed.
