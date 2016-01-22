@@ -37,5 +37,6 @@ public class ApplicationController {
     //public Result card() {
     //    return Results.html();
     //}
+    public Result sendCards() {return Results.html();}
 
 }
