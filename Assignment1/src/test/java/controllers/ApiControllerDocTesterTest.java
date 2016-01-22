@@ -29,9 +29,10 @@ import static org.junit.Assert.*;
 
 public class ApiControllerDocTesterTest extends NinjaDocTester {
     
+   
     String URL_INDEX = "/";
     String URL_ACES_UP = "/AcesUp";
-    
+
     @Test
     public void testGetIndex() {
 
@@ -68,7 +69,7 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         assertThat(myDeck.getCard(29).getSuit(), containsString("Diamonds"));
 
     }
-    //This tests the dealing functionality of the deck class, as cards should never be dealt twice.
+    //This tests the dealing functionality of the deck class, as cards should never be dealt twice, and once 52 cards are dealt, the deck should be empty.
     @Test
     public void testDeal(){
         deck myDeck = new deck();
@@ -81,7 +82,18 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         }
         assertSame(myDeck.numCards(), 0);
     }
-
-
+    @Test
+    public void testGameAndPile(){
+        game myGame = new game();
+        assertSame(myGame.getScore(), 0);
+        assertSame(myGame.one.getSize(), 1);
+        assertNotNull(myGame.one.getTop());
+        assertSame(myGame.remainingCards(), 48); //Because as soon as the game starts, 4 cards are dealt
+        myGame.one.removeTop();
+        assertNull(myGame.one.getTop());
+        myGame.deal();
+        assertNotNull(myGame.one.getTop());
+        assertSame(myGame.remainingCards(), 44);
+    }
 
 }
