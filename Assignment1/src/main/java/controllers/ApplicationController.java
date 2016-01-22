@@ -18,6 +18,7 @@ package controllers;
 
 import ninja.Result;
 import ninja.Results;
+import ninja.Context;
 
 import com.google.inject.Singleton;
 
@@ -37,6 +38,6 @@ public class ApplicationController {
     //public Result card() {
     //    return Results.html();
     //}
-    public Result sendCards() {return Results.html();}
+    public Result sendCards(Context context, game myGame) {return Results.json().render("a");}
 
 }
