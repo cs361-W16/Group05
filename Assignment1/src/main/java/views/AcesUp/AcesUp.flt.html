@@ -2,6 +2,7 @@
 
 <link href="/assets/css/AcesUp.css" rel="stylesheet">
 <script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 <body>
 
@@ -15,9 +16,9 @@
 
     <tr><td class="columnOfCards" id="c1">
         <table>
-            <tr><td class="cardLocation l0"></td></tr>
-            <tr><td class="cardLocation l1"></td></tr>
-            <tr><td class="cardLocation l2"></td></tr>
+            <tr><td id="c1-1" class="cardLocation l0"></td></tr>
+            <tr><td id="c1-2" class="cardLocation l1"></td></tr>
+            <tr><td id="c1-3" class="cardLocation l2"></td></tr>
             <tr><td class="cardLocation"></td></tr>
             <tr><td class="cardLocation"></td></tr>
             <tr><td class="cardLocation"></td></tr>
@@ -33,9 +34,9 @@
     </td>
         <td class="columnOfCards" id="c2">
             <table>
-                <tr><td class="cardLocation l0"></td></tr>
-                <tr><td class="cardLocation l1"></td></tr>
-                <tr><td class="cardLocation l2"></td></tr>
+                <tr><td id="c2-1" class="cardLocation l0"></td></tr>
+                <tr><td id="c2-2" class="cardLocation l1"></td></tr>
+                <tr><td id="c2-3" class="cardLocation l2"></td></tr>
                 <tr><td class="cardLocation"></td></tr>
                 <tr><td class="cardLocation"></td></tr>
                 <tr><td class="cardLocation"></td></tr>
@@ -51,9 +52,9 @@
         </td>
         <td class="columnOfCards" id="c3">
             <table>
-                <tr><td class="cardLocation l0"></td></tr>
-                <tr><td class="cardLocation l1"></td></tr>
-                <tr><td class="cardLocation l2"></td></tr>
+                <tr><td id="c3-1" class="cardLocation l0"></td></tr>
+                <tr><td id="c3-2" class="cardLocation l1"></td></tr>
+                <tr><td id="c3-3" class="cardLocation l2"></td></tr>
                 <tr><td class="cardLocation"></td></tr>
                 <tr><td class="cardLocation"></td></tr>
                 <tr><td class="cardLocation"></td></tr>
@@ -69,9 +70,9 @@
         </td>
         <td class="columnOfCards" id="c4">
             <table>
-                <tr><td class="cardLocation l0"></td></tr>
-                <tr><td class="cardLocation l1"></td></tr>
-                <tr><td class="cardLocation l2"></td></tr>
+                <tr><td id="c4-1" class="cardLocation l0"></td></tr>
+                <tr><td id="c4-2" class="cardLocation l1"></td></tr>
+                <tr><td id="c4-3" class="cardLocation l2"></td></tr>
                 <tr><td class="cardLocation"></td></tr>
                 <tr><td class="cardLocation"></td></tr>
                 <tr><td class="cardLocation"></td></tr>
@@ -92,11 +93,41 @@
 
 
 </body>
-
+<script>
+    var list;
     $("#dealButton").click(function(){
         console.log("Registered a click");
-        getCards();
+
+
+
+        $.ajax({
+            type: "POST",
+            url: "/getCards.json",
+            data: JSON.stringify(list),
+            success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+                list = data;
+                display(data);},
+            contentType:"application/json; charset=utf-8",
+            dataType:"json",
+        });
+
     });
+    $.getJSON("http://localhost:8080/getCards.json", function( data ) {
+            display(data);
+            list = data;
+    });
+        function display(list) {
+           print("#c1-1", list.one.top.number,list.one.top.suit);
+           print("#c2-1", list.two.top.number,list.two.top.suit);
+           print("#c3-1", list.three.top.number,list.three.top.suit);
+           print("#c4-1", list.four.top.number,list.three.top.suit);
+        }
+        function print(id, number, suit){
+           $(id).append(number);
+           $(id).append(" - ");
+           $(id).append(suit);
+        }
+
 
 </script>
 </html>
