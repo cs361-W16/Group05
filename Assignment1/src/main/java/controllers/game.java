@@ -10,6 +10,8 @@ public class game {
     public pile two;
     public pile three;
     public pile four;
+    public String action;
+    public String details;
 
     game(){
         myDeck = new deck();
