@@ -13,7 +13,7 @@ Card: As a player, I want to be able to remove a lower card with the same suit a
 Conversation:
 Confirmation:
 
-Story 4:
-Card: As a player, I want my score to be incremented every time a card is removed.
-Conversation:
-Confirmation: 
+Story 4: Yuan Yuan
+Card: As a player, I should be able to see my score when playing the game, so I can see how well I played.
+Conversation: Create a tag box named "Score" and set the initial value to zero
+Confirmation: Open the web page and check if the score is up there.
