@@ -8,10 +8,10 @@ Card: As a player, I want the four cards to be printed to the screen so I can se
 Conversation: Use get and Post method to the web page and make a json call to post 4 cards onto the screen
 Confirmation: Open the web page and check if 4 cards are up there
 
-Story 3:
-Card: As a player, I want to be able to remove a lower card with the same suit as another card, so the game can be played.
-Conversation:
-Confirmation:
+Story 3: -Sophia Liu
+Card: As a player, I want to be able to restart the game whenever I want so I don't have to lose.
+Conversation: Use the onclick button to call the game function to re-start the game.
+Confirmation: Check to see if there are 48 cards in the deck, there's one card in every row and the score is 0.
 
 Story 4: Yuan Yuan
 Card: As a player, I should be able to see my score when playing the game, so I can see how well I played.

@@ -13,7 +13,7 @@ public class game {
     public String action;
     public String details;
 
-    game(){
+    public game(){
         myDeck = new deck();
         one = new pile();
         two = new pile();
@@ -22,6 +22,7 @@ public class game {
 
         deal();
     }
+
     public void deal(){
         one.add(myDeck.dealRandom());
         two.add(myDeck.dealRandom());
