@@ -18,11 +18,14 @@ package controllers;
 
 import ninja.Result;
 import ninja.Results;
+import ninja.Context;
 
 import com.google.inject.Singleton;
 
 
 @Singleton
+
+
 public class ApplicationController {
 
     public Result index() {
@@ -31,6 +34,20 @@ public class ApplicationController {
 
     public Result acesUp() {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
+    }
+    //public Result card() {
+    //    return Results.html();
+    //}
+    public Result sendCards(Context context, game myGame) {
+       /* if(myGame.action == "deal"){
+            myGame.deal();
+        }*/
+
+        return Results.json().render(myGame);
+    }
+    public Result sendCardsGet(){
+        game myGame = new game();
+        return Results.json().render(myGame);
     }
 
 }

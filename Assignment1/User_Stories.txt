@@ -1,4 +1,19 @@
-Story 1:
-Card: As a player, I want all of the cards to be printed to the screen so I can decide what to do.
-Conversation: The computer should randomly select 4 values, and print them side by side to the screen.
-Confirmation: There will be a test to see that there are 4 values on the screen.
+Story 1 - Nathan
+Card: As a player, I want a full regulation deck that will deal cards randomly so the game is fair
+Conversation: To do this I have made 4 classes: card, deck, pile, game
+Confirmation: We will test to see that all 52 cards can be dealt, and that the same card is not repeated
+
+Story 2: - Yipeng Song
+Card: As a player, I want the four cards to be printed to the screen so I can see them.
+Conversation: Use get and Post method to the web page and make a json call to post 4 cards onto the screen
+Confirmation: Open the web page and check if 4 cards are up there
+
+Story 3:
+Card: As a player, I want to be able to remove a lower card with the same suit as another card, so the game can be played.
+Conversation:
+Confirmation:
+
+Story 4: Yuan Yuan
+Card: As a player, I should be able to see my score when playing the game, so I can see how well I played.
+Conversation: Create a tag box named "Score" and set the initial value to zero
+Confirmation: Open the web page and check if the score is up there.
