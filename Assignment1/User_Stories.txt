@@ -8,10 +8,10 @@ Card: As a player, I want the four cards to be printed to the screen so I can se
 Conversation: Use get and Post method to the web page and make a json call to post 4 cards onto the screen
 Confirmation: Open the web page and check if 4 cards are up there
 
-Story 3:
-Card: As a player, I want to be able to remove a lower card with the same suit as another card, so the game can be played.
-Conversation:
-Confirmation:
+Story 3: - Sophia
+Card: As a player, I want to be able to move cards into an empty column so I can get a higher chance to win the game.
+Conversation: Create a move button for each column, if there is an empty column, move the card to that column.
+Confirmation: If there is 1+ empty columns, the user can move the top card to any of the empty columns when the button is clicked.
 
 Story 4: Yuan Yuan
 Card: As a player, I should be able to see my score when playing the game, so I can see how well I played.

@@ -16,6 +16,7 @@
 
 package controllers;
 
+import models.game;
 import ninja.Result;
 import ninja.Results;
 import ninja.Context;

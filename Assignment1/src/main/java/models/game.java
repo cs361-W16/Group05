@@ -1,4 +1,9 @@
-package controllers;
+package models;
+
+import models.card;
+import models.deck;
+import java.util.ArrayList;
+
 
 /**
  * Created by Natha_000 on 1/21/2016.
@@ -12,8 +17,11 @@ public class game {
     public pile four;
     public String action;
     public String details;
+    public ArrayList<deck> columns = new ArrayList<deck>(4);
+    public deck remaining_deck;
+    public deck discard_pile;
 
-    game(){
+    public game(){
         myDeck = new deck();
         one = new pile();
         two = new pile();

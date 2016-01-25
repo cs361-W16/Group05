@@ -17,19 +17,22 @@
 package controllers;
 
 
+import models.card;
+import models.deck;
+import models.game;
 import org.junit.Test;
 
 import ninja.NinjaDocTester;
 import org.doctester.testbrowser.Request;
 import org.doctester.testbrowser.Response;
-import org.hamcrest.CoreMatchers;
+
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class ApiControllerDocTesterTest extends NinjaDocTester {
-    
-   
+
+
     String URL_INDEX = "/";
     String URL_ACES_UP = "/AcesUp";
 
@@ -53,37 +56,12 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         assertThat(response.payload, containsString("Aces Up"));
         assertThat(response.payload, containsString("columnOfCards"));
     }
-    //This tests the constructor of the card class, to make sure cards are successfully created
-    @Test
-    public void testCard(){
-        card myCard = new card(1, "Diamond");
-        assertThat(myCard.getSuit(), containsString("Diamond"));
-        assertSame(myCard.getNumber(), 1);
-    }
-    //This tests the constructor of the deck class, to make sure the deck successfully creates cards
-    @Test
-    public void testDeck(){
-        deck myDeck = new deck();
-        assertSame(myDeck.numCards(), 52);
-        assertSame(myDeck.getCard(1).getNumber(), 2);
-        assertThat(myDeck.getCard(29).getSuit(), containsString("Diamonds"));
 
-    }
-    //This tests the dealing functionality of the deck class, as cards should never be dealt twice, and once 52 cards are dealt, the deck should be empty.
+
+
+
     @Test
-    public void testDeal(){
-        deck myDeck = new deck();
-        card myCard = myDeck.dealRandom();
-        card otherCard = null;
-        for(int i = 0; i < 51; i++) {
-            otherCard = myDeck.dealRandom();
-            assertNotNull(otherCard);
-            assertNotEquals(myCard, otherCard);
-        }
-        assertSame(myDeck.numCards(), 0);
-    }
-    @Test
-    public void testGameAndPile(){
+    public void testGameAndPile() {
         game myGame = new game();
         assertSame(myGame.getScore(), 0);
         assertSame(myGame.one.getSize(), 1);
@@ -96,4 +74,15 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         assertSame(myGame.remainingCards(), 44);
     }
 
+    @Test
+    public void testRestart(){
+
+        game myGame = new game();
+        assertSame(myGame.remainingCards(),48); //4 cards are dealt
+        assertSame(myGame.getScore(), 0);
+        assertSame(myGame.one.getSize(), 1);
+        assertSame(myGame.two.getSize(), 1);
+        assertSame(myGame.three.getSize(), 1);
+        assertSame(myGame.four.getSize(), 1);
+    }
 }
