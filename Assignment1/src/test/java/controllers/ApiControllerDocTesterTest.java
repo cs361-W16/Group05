@@ -96,4 +96,18 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         assertSame(myGame.remainingCards(), 44);
     }
 
+    @Test
+    public void testrestartGame() {
+        game myGame = new game();
+        assertSame(myGame.getScore(), 0);
+        assertSame(myGame.one.getSize(), 1);
+        assertSame(myGame.two.getSize(), 1);
+        assertSame(myGame.three.getSize(), 1);
+        assertSame(myGame.four.getSize(), 1);
+        assertSame(myGame.remainingCards(), 48);
+    }
+
+
+    }
+
 }

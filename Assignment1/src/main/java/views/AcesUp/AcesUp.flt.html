@@ -91,6 +91,7 @@
 
 <button id="dealButton">Deal</button>
 <button id="removeButton">Remove</button>
+<button onclick="controllers.game()">Click me</button>
 
 <table>
   <tr><td id="score" class="scoreLocation"></td>
@@ -133,7 +134,14 @@
            $(id).append(" - ");
            $(id).append(suit);
         }
+   $("#restartButton").click(function(){
+        console.log("Registered a click");
 
+        $.ajax({
+
+        });
+
+    });
 
 </script>
 </html>
